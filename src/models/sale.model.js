@@ -16,6 +16,30 @@ const newSale = async (sales) => {
   return saleId.insertId;
 };
 
+const getAllSales = async () => {
+  const query = `SELECT sp.sale_id as saleId, sale.date, sp.product_id as productId, sp.quantity 
+  FROM sales as sale
+  INNER JOIN sales_products as sp on (sale.id = sp.sale_id)
+  ORDER BY sp.sale_id, product_id`;
+
+  const [allSales] = await connection.execute(query);
+
+  return allSales;
+};
+
+const getSaleById = async (id) => {
+  const query = `SELECT sale.date, sp.product_id as productId, sp.quantity
+  FROM sales as sale
+  INNER JOIN sales_products as sp on (sale.id = sp.sale_id)
+  WHERE sp.sale_id = ?
+  ORDER BY sp.sale_id, product_id`;
+
+  const [saleById] = await connection.execute(query, [id]);
+  return saleById;
+};
+
 module.exports = {
   newSale,
+  getAllSales,
+  getSaleById,
 };
