@@ -1,20 +1,20 @@
 const connection = require('./connectionDB');
 
-const newSale = async (sales) => {
-  const [saleId] = await connection.execute('INSERT INTO sales (date) values (NOW())');
-  const id = saleId.insertId;
-  const promises = [];
-  sales.forEach((element) => {
-    const insertQuery = `INSERT INTO sales_products
-      (sale_id, product_id, quantity) VALUES (?, ?, ?)`;
-    const insert = connection.execute(insertQuery, [id, element.productId, element.quantity]);
-    promises.push(insert);
-  });
+// const newSale = async (sales) => {
+//   const [saleId] = await connection.execute('INSERT INTO sales (date) values (NOW())');
+//   const id = saleId.insertId;
+//   const promises = [];
+//   sales.forEach((element) => {
+//     const insertQuery = `INSERT INTO sales_products
+//       (sale_id, product_id, quantity) VALUES (?, ?, ?)`;
+//     const insert = connection.execute(insertQuery, [id, element.productId, element.quantity]);
+//     promises.push(insert);
+//   });
 
-  await Promise.all(promises);
+//   await Promise.all(promises);
 
-  return saleId.insertId;
-};
+//   return saleId.insertId;
+// };
 
 const getAllSales = async () => {
   const query = `SELECT sp.sale_id as saleId, sale.date, sp.product_id as productId, sp.quantity 
@@ -39,7 +39,7 @@ const getSaleById = async (id) => {
 };
 
 module.exports = {
-  newSale,
+  // newSale,
   getAllSales,
   getSaleById,
 };
