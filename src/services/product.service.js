@@ -1,4 +1,5 @@
 const productModel = require('../models/product.model');
+const validations = require('./validations/validations.service');
 
 const getAllProducts = async () => {
   const allProducts = await productModel.getAllProducts();
@@ -16,6 +17,15 @@ const getProductById = async (id) => {
 };
 
 const addProduct = async (name) => {
+  const { error } = validations.nameValidation.validate({ name });
+
+  if (error) {
+    if (error.details[0].type === 'string.min') {
+      return { status: 422, message: error.message };
+    }
+    return { status: 400, message: error.message };
+  }
+  
   const newProduct = await productModel.addProduct(name);
 
   return { id: newProduct.insertId, name };

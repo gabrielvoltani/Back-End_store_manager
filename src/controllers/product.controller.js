@@ -20,6 +20,10 @@ const getProductById = async (req, res) => {
 const addProduct = async (req, res) => {
   const { name } = req.body;
   const newProduct = await productService.addProduct(name);
+
+  if (!newProduct.id) { 
+    return res.status(newProduct.status).json({ message: newProduct.message });
+  }
   return res.status(201).json(newProduct);
 };
 
