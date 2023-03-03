@@ -17,8 +17,15 @@ const addProduct = async (name) => {
   return newProduct;
 };
 
+const maxProductId = async () => {
+  const [[maxId]] = await connection.execute('SELECT MAX(id) as id FROM productS');
+
+  return maxId.id;
+};
+
 module.exports = {
   getAllProducts,
   getProductById,
   addProduct,
+  maxProductId,
 };
