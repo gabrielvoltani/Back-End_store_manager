@@ -31,8 +31,19 @@ const addProduct = async (name) => {
   return { id: newProduct.insertId, name };
 };
 
+const deleteProduct = async (id) => {
+  const checkProduct = await getProductById(id);
+
+  if (checkProduct.status === 404) return checkProduct;
+
+  await productModel.deleteProduct(id);
+
+  return { status: 204 };
+};
+
 module.exports = {
   getAllProducts,
   getProductById,
   addProduct,
+  deleteProduct,
 };
