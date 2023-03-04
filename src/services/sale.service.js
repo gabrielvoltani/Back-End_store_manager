@@ -1,17 +1,17 @@
 const saleModel = require('../models/sale.model');
-// const validationsSale = require('./validations/validations.service');
+const validationsSale = require('./validations/validations.service');
 
-// const newSale = async (sales) => {
-//   const erro = await validationsSale.validations(sales);
+const newSale = async (sales) => {
+  const erro = await validationsSale.validations(sales);
 
-//   if (erro) {
-//     return erro;
-//   }
+  if (erro) {
+    return erro;
+  }
 
-//   const sale = await saleModel.newSale(sales);
+  const sale = await saleModel.newSale(sales);
 
-//   return ({ id: sale, itemsSold: sales });
-// };
+  return ({ id: sale, itemsSold: sales });
+};
 
 const getAllSales = async () => {
   const allSales = await saleModel.getAllSales();
@@ -28,7 +28,7 @@ const getSaleById = async (id) => {
 };
 
 module.exports = {
-  // newSale,
+  newSale,
   getAllSales,
   getSaleById,
 };
