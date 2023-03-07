@@ -31,6 +31,29 @@ const addProduct = async (name) => {
   return { id: newProduct.insertId, name };
 };
 
+const updateProduct = async (name, id) => {
+  const { error } = validations.nameValidation.validate({ name });
+
+  if (error) {
+    if (error.details[0].type === 'string.min') {
+      // return { status: 422, message: error.message };
+      return { status: 422, message: { message: error.message } };
+    }
+    // return { status: 400, message: error.message };
+    return { status: 400, message: { message: error.message } };
+  }
+  
+  const productByID = await productModel.getProductById(id);
+
+  if (!productByID) {
+    // return { status: 404, message: 'Product not found' };
+    return { status: 404, message: { message: 'Product not found' } };
+  }
+  await productModel.updateProduct(name, id);
+
+  return { status: 200, message: { id, name } };
+};
+
 const deleteProduct = async (id) => {
   const checkProduct = await getProductById(id);
 
@@ -45,5 +68,6 @@ module.exports = {
   getAllProducts,
   getProductById,
   addProduct,
+  updateProduct,
   deleteProduct,
 };

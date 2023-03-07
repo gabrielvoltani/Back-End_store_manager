@@ -23,6 +23,11 @@ const maxProductId = async () => {
   return maxId.id;
 };
 
+const updateProduct = async (name, id) => {
+  const [result] = await connection.execute('UPDATE products SET name=? WHERE id=?', [name, id]);
+  return result;
+};
+
 const deleteProduct = async (id) => {
   await connection.execute('DELETE FROM StoreManager.products WHERE id = ?', [id]);
 };
@@ -32,5 +37,6 @@ module.exports = {
   getProductById,
   addProduct,
   maxProductId,
+  updateProduct,
   deleteProduct,
 };
