@@ -1,12 +1,4 @@
-const productIdFindById = [
-  {
-    date: "2023-02-17T20:09:35.000Z",
-    productId: 2,
-    quantity: 10
-  }
-]
-
-const allSalesProducts = [
+const allSales = [
   {
     saleId: 1,
     date: "2023-02-17T21:36:54.000Z",
@@ -26,27 +18,23 @@ const allSalesProducts = [
     quantity: 15
   }
 ]
-const findSalesById = {
+
+
+const singleSale = {
   id: 1,
   date: '2023-02-17 21:36:54',
 };
 
-const findSalesProductById = [
-  {
-    date: "2023-02-17T21:36:54.000Z",
-    productId: 1,
-    quantity: 5
-  },
-  {
-    date: "2023-02-17T21:36:54.000Z",
-    productId: 2,
-    quantity: 10
-  }
-]
+
+const newSale = [{
+  saleId: 3,
+  date: "2023-01-10T21:36:54.000Z",
+  productId: 2,
+  quantity: 21
+}];
 
 module.exports = {
-  productIdFindById,
-  allSalesProducts,
-  findSalesById,
-  findSalesProductById,
+  allSales,
+  singleSale,
+  newSale,
 }

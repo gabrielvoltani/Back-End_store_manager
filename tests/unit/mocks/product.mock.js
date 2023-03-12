@@ -13,30 +13,31 @@ const allProducts = [
   },
 ];
 
-const twoProducts = [
-  {
-    id: 1,
-    name: 'Martelo de Thor',
-  },
-  {
-    id: 2,
-    name: 'Traje de encolhimento',
-  }
-];
-
-const newProduct = {
-  id: 4,
-  name: 'Xablau',
-};
-
-const oneProduct = [{
+const singleProduct = [{
   id: 1,
   name: 'Martelo de Thor',
 }];
 
+const updatedProduct = [
+  {
+    id: 1,
+    name: 'Martelo de Roht',
+  },
+  {
+    id: 2,
+    name: 'Traje de otnemihlocne',
+  }
+];
+
+const newProduct = [{
+  id: 4,
+  name: 'Mose!',
+}];
+
+
 module.exports = {
   allProducts,
-  oneProduct,
-  twoProducts,
+  singleProduct,
+  updatedProduct,
   newProduct,
 }

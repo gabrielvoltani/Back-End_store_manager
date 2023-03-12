@@ -46,5 +46,8 @@ const validations = async (sales) => {
 
 module.exports = {
   nameValidation,
+  isSaleValid,
+  idMax,
+  saleMinimum,
   validations,
 };
