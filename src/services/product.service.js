@@ -64,10 +64,16 @@ const deleteProduct = async (id) => {
   return { status: 204 };
 };
 
+const doubleProduct = (prod) => {
+  const dProd = prod * 2;
+  return dProd;
+};
+
 module.exports = {
   getAllProducts,
   getProductById,
   addProduct,
   updateProduct,
   deleteProduct,
+  doubleProduct,
 };

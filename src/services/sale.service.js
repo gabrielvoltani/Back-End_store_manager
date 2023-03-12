@@ -39,9 +39,15 @@ const deleteSale = async (id) => {
   return { status: 204 };
 };
 
+const doubleSale = (sale) => {
+  const dSale = sale * 2;
+  return dSale;
+};
+
 module.exports = {
   newSale,
   getAllSales,
   getSaleById,
   deleteSale,
+  doubleSale,
 };

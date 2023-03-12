@@ -42,9 +42,15 @@ const deleteSale = async (id) => {
   await connection.execute('DELETE FROM sales WHERE id=?', [id]);
 };
 
+const doubleSale = (sale) => {
+  const dSale = sale * 2;
+  return dSale;
+};
+
 module.exports = {
   newSale,
   getAllSales,
   getSaleById,
   deleteSale,
+  doubleSale,
 };

@@ -39,9 +39,15 @@ const deleteSale = async (req, res) => {
   res.status(delSale.status).json({ message: delSale.message });
 };
 
+const doubleSale = (sale) => {
+  const dSale = sale * 2;
+  return dSale;
+};
+
 module.exports = {
   newSale,
   getAllSales,
   getSaleById,
   deleteSale,
+  doubleSale,
 };

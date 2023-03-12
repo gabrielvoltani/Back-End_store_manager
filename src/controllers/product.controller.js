@@ -50,10 +50,16 @@ const deleteProduct = async (req, res) => {
   return res.status(delProduct.status).json();
 };
 
+const doubleProduct = (prod) => {
+  const dProd = prod * 2;
+  return dProd;
+};
+
 module.exports = {
   getAllProducts,
   getProductById,
   addProduct,
   updateProduct,
   deleteProduct,
+  doubleProduct,
 };

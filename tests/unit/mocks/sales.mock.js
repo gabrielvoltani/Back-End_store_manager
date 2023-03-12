@@ -27,11 +27,10 @@ const singleSale = {
 
 
 const newSale = [{
-  saleId: 3,
-  date: "2023-01-10T21:36:54.000Z",
-  productId: 2,
-  quantity: 21
+  id: 4,
+  itemsSold: 10,
 }];
+
 
 module.exports = {
   allSales,
