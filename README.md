@@ -1,9 +1,16 @@
-# API de Gerenciamento de Vendas Dropshipping
+# Back-End Store Manager
 
-Neste projeto, desenvolvi minha primeira API utilizando a arquitetura MSC (Model-Service-Controller), com o objetivo de criar um sistema de gerenciamento de vendas no formato dropshipping. Com essa API, é possível criar, visualizar, deletar e atualizar produtos e vendas, de forma rápida e eficiente.
+This project is a back-end application for managing a store's inventory. The application was built using Node.js, Express, and PostgreSQL.
 
-Para a gestão de dados, foi utilizado o poderoso banco de dados MySQL. Além disso, a API segue o padrão RESTful, o que permite uma comunicação simples e padronizada entre as aplicações.
+## Features
 
-Este projeto foi uma excelente oportunidade para colocar em prática os conhecimentos adquiridos na Trybe, e desenvolver habilidades essenciais para a carreira de desenvolvimento de software.
+- Users can create, read, update, and delete products from the inventory.
+- Users can create, read, update, and delete categories for the products.
+- Users can create, read, update, and delete sales.
 
-Sinta-se à vontade para utilizar e contribuir com o projeto, e não deixe de conferir a documentação completa da API, para utilizar todas as funcionalidades disponíveis.
+## Technologies
+
+- Node.js
+- Express
+- JSON Web Tokens (JWT)
+- Jest (for testing)
