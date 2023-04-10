@@ -1,6 +1,6 @@
 # Back-End Store Manager
 
-This project is a back-end application for managing a store's inventory. The application was built using Node.js, Express, and PostgreSQL.
+This project is a back-end application for managing a store's inventory. The application was built using Node.js and Express.js.
 
 ## Features
 
